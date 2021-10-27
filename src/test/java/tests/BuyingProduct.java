@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class BuyingProduct extends BaseTest{
 
 
-    @Test
+    @Test(description = "Clicking on the Cart icon")
     public void openCart(){
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -16,7 +16,7 @@ public class BuyingProduct extends BaseTest{
 
     }
 
-    @Test
+    @Test(description = "Adding one element to cart")
     public void addElementToCart(){
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -25,7 +25,7 @@ public class BuyingProduct extends BaseTest{
         Assert.assertEquals(cartPage.getGoodsLabel(), "Sauce Labs Backpack", "The good wasn't added to the card");
     }
 
-    @Test
+    @Test(description = "Adding all the elements to cart")
     public void addAllElementsToCart(){
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -39,7 +39,7 @@ public class BuyingProduct extends BaseTest{
         Assert.assertEquals(cartPage.numberOfElementsInCart(), 6, "The number of elements in cart doesn't correspond to the number of added goods");
     }
 
-    @Test
+    @Test(description = "Removing last element from cart")
     public void removeLastElementFromCart(){
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -54,7 +54,7 @@ public class BuyingProduct extends BaseTest{
         Assert.assertEquals(cartPage.numberOfElementsInCart(),5, "The number of elements in cart doesn't correspond to the number of added goods");
     }
 
-    @Test
+    @Test(description = "Buying Goods")
     public void buyingGoods(){
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");

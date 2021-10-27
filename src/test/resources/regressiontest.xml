@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression test suite" parallel="classes" thread-count="1">
+    <listeners>
+            <listener class-name="tests.retrysingletest.AnnotationTransformer"/>
+    </listeners>
+    <test name="test 2">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="tests.SignInTest"/>
+            <class name="tests.BuyingProduct"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>
